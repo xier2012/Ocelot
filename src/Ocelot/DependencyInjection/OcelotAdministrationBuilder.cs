@@ -1,13 +1,11 @@
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Ocelot.Raft;
-using Rafty.Concensus;
-using Rafty.FiniteStateMachine;
-using Rafty.Infrastructure;
-using Rafty.Log;
-
 namespace Ocelot.DependencyInjection
 {
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Ocelot.Raft;
+    using Rafty.FiniteStateMachine;
+    using Rafty.Infrastructure;
+    using Rafty.Log;
     using Rafty.Concensus.Node;
 
     public class OcelotAdministrationBuilder : IOcelotAdministrationBuilder

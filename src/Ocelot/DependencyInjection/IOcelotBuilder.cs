@@ -1,21 +1,15 @@
-using System;
-using System.Net.Http;
-using IdentityServer4.AccessTokenValidation;
-using Ocelot.Middleware.Multiplexer;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-
 namespace Ocelot.DependencyInjection
 {
+    using System.Net.Http;
+    using Ocelot.Middleware.Multiplexer;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Configuration;
+
     public interface IOcelotBuilder
     {
         IServiceCollection Services { get; }
 
         IConfiguration Configuration { get; }
-
-        IOcelotAdministrationBuilder AddAdministration(string path, string secret);
-
-        IOcelotAdministrationBuilder AddAdministration(string path, Action<IdentityServerAuthenticationOptions> configOptions);
 
         IOcelotBuilder AddDelegatingHandler<T>(bool global = false)
             where T : DelegatingHandler;
